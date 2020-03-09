@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
-@CrossOrigin("*")
+@CrossOrigin("*") // todo, remove wildcard star
 public class CryptocurrencyPricesController {
     private CryptocurrencyService cryptocurrencyService;
 
@@ -23,7 +22,9 @@ public class CryptocurrencyPricesController {
     }
 
     @RequestMapping(value = "/latest-cryptocurrencies", method = RequestMethod.GET)
-    public Object addLocation(@RequestParam String start, @RequestParam String limit, @RequestParam String convert) {
+    public Object addLocation(@RequestParam String start,
+                              @RequestParam String limit,
+                              @RequestParam String convert) {
         CryptoPriceResponse latestCryptocurrencies = cryptocurrencyService.getLatestCryptocurrencies(start, limit, convert);
         if (latestCryptocurrencies.isValid()) {
             return ResponseEntity.ok(latestCryptocurrencies.getData());
