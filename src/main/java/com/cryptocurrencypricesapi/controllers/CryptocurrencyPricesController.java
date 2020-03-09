@@ -22,7 +22,7 @@ public class CryptocurrencyPricesController {
     }
 
     @RequestMapping(value = "/latest-cryptocurrencies", method = RequestMethod.GET)
-    public Object addLocation(@RequestParam String start,
+    public Object getLatestCryptocurrencies(@RequestParam String start,
                               @RequestParam String limit,
                               @RequestParam String convert) {
         CryptoPriceResponse latestCryptocurrencies = cryptocurrencyService.getLatestCryptocurrencies(start, limit, convert);
