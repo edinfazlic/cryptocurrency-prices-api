@@ -31,7 +31,7 @@ Application showcases knowledge of:
 
 ## Requirements
 1. Java - 11.x
-1. Maven - 4.x.x
+1. Maven - 3.x.x
 
 ## Development server
 1. Build and run the backend app using maven  
